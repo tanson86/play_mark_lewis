@@ -1,0 +1,10 @@
+@()(implicit request:RequestHeader, flash:Flash)
+
+@main("Task list 2 SPA"){
+    <div id="contents"></div>
+
+<input id="csrfToken" type="hidden" value="@helper.CSRF.getToken.value"/>
+    <input id="validatePath" type="hidden" value="@routes.TaskList2Controller.validate"/>
+
+<script src="@routes.Assets.versioned("javascripts/taskList2.js")"></script>
+}

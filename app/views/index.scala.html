@@ -1,0 +1,9 @@
+@(message: String)(implicit flash:Flash)
+
+@main("Play with Scala.js") {
+	<h2>Standard template</h2>
+
+	<p id="randomNumP">Click for a new random number: <span id="randomNum">4</span></p>
+
+	<script src="@routes.Assets.versioned("javascripts/basic.js")"></script>
+}

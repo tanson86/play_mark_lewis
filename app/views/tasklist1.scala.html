@@ -1,0 +1,37 @@
+@(tasks:Seq[String])(implicit request:RequestHeader, flash:Flash)
+
+@main("Task list"){
+    <h2>Tasklist</h2>
+
+<!--    An alternate approach using post -->
+<!--    <ul>-->
+<!--        @for((t,i) <- tasks.zipWithIndex){-->
+<!--            <li> @t </li>-->
+<!--            <form method="post" action="@routes.TaskList1Controller.deleteTask1ViaPost">-->
+<!--                @helper.CSRF.formField-->
+<!--                <input type="hiden" name="index" value="@i"/><br>-->
+<!--                <input type="submit" value="submit"/>-->
+<!--            </form>-->
+<!--        }-->
+<!--    </ul>-->
+    <table>
+        @for(t<-tasks){
+        <tr>
+            <td>@t</td>
+            <td><a href="@routes.TaskList1Controller.deleteTask1(t)">Delete</a></td>
+        </tr>
+        }
+
+    </table>
+
+    <br>
+    <form method="post" action="@routes.TaskList1Controller.addTask1">
+        @helper.CSRF.formField
+        <input type="text" name="task"/><br>
+        <input type="submit" value="submit"/>
+    </form>
+
+    <div>
+        <a href="@routes.TaskList1Controller.logout">Logout</a>
+    </div>
+}

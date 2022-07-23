@@ -1,0 +1,13 @@
+@(title: String)(content: Html)(implicit flash:Flash)
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>@title</title>
+  </head>
+  <body>
+    @flash.get("error")
+    @content
+  </body>
+</html>

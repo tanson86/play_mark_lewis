@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                                   controllers.HomeController.index()
+GET     /getProductViaQueryParams                         controllers.HomeController.getProduct(prodType:String,prodId:Int)
+GET     /getProductViaPath/:prodType/:prodId                         controllers.HomeController.getProduct(prodType:String,prodId:Int)
+GET     /getProductViaRe/$prodType<[a-z]{2}\d\d>/:prodId                         controllers.HomeController.getProduct(prodType:String,prodId:Int)
+GET     /random                                 controllers.HomeController.randomNum
+
+# Routess for TaskList1
+GET     /taskList                           controllers.TaskList1Controller.taskList()
+GET     /login1                     controllers.TaskList1Controller.login1
+GET     /validateLogin1Get             controllers.TaskList1Controller.validateLogin1Get(username:String,password:String)
+GET     /logout            controllers.TaskList1Controller.logout
+GET     /deleteTask1/:taskName          controllers.TaskList1Controller.deleteTask1(taskName:String)
+
+POST    /validateLogin1Form            controllers.TaskList1Controller.validateLogin1Form
+POST    /validateLogin1Post             controllers.TaskList1Controller.validateLogin1Post
+POST    /create1UserPost             controllers.TaskList1Controller.create1UserPost
+POST    /addTask1                      controllers.TaskList1Controller.addTask1
+POST    /deleteTask1ViaPost             controllers.TaskList1Controller.deleteTask1ViaPost
+
+# Routes for TaskList2
+GET     /load2                          controllers.TaskList2Controller.load
+GET     /login2                          controllers.TaskList2Controller.login
+#GET     /validate2                          controllers.TaskList2Controller.validate(un,pwd)
+GET     /create2                          controllers.TaskList2Controller.create(un,pwd)
+GET     /delete2                          controllers.TaskList2Controller.deleteTask(task:Int)
+GET     /addtask2                          controllers.TaskList2Controller.addTask(task)
+POST     /validate2                          controllers.TaskList2Controller.validate
+
+# Routes for tasklist3
+GET     /load3                          controllers.TaskList3Controller.load
+GET     /data                           controllers.TaskList3Controller.data
+POST     /validate3                          controllers.TaskList3Controller.validate
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

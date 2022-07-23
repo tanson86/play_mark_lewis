@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/tanson_thomas/play-examples/play-samples-play-scala-hello-world-tutorial/app/controllers/TaskList3Controller.scala:29:27: object login3 is not a member of package views.html[0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean login1 or login2?[0m
+[0m[[0m[31merror[0m] [0m[0m            Ok(views.html.login3())[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
