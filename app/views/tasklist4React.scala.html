@@ -1,0 +1,12 @@
+@()(implicit request:RequestHeader, flash:Flash)
+
+@main("Task list 3 React"){
+
+
+<input id="csrfToken" type="hidden" value="@helper.CSRF.getToken.value"/>
+<input id="validatePath" type="hidden" value="@routes.TaskList3Controller.validate"/>
+<input id="data" type="hidden" value="@routes.TaskList3Controller.data"/>
+<div id="react-root"></div>
+<script src="@routes.Assets.versioned("javascripts/taskList4.js")"></script>
+
+}
